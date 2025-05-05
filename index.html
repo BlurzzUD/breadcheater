@@ -1,1 +1,112 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bread Cheater 4.0</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    body {
+      background-color: #0a0a23;
+      font-family: 'Press Start 2P', cursive, monospace;
+    }
+    /* Custom text glow */
+    .glow-text {
+      color: #3af0ff;
+      text-shadow:
+        0 0 4px #3af0ff,
+        0 0 8px #3af0ff,
+        0 0 16px #3af0ff,
+        0 0 32px #3af0ff;
+    }
+    .glow-box {
+      border: 2px solid #3af0ff;
+      box-shadow:
+        0 0 4px #3af0ff,
+        0 0 8px #3af0ff,
+        0 0 16px #3af0ff;
+    }
+    /* Scrollbar hidden for container */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="flex justify-center items-center min-h-screen p-4">
+  <div class="w-[320px] h-[640px] bg-[#0a0a23] border border-[#3af0ff] rounded-lg p-3 relative select-none">
+    <!-- Title -->
+    <h1 class="glow-text text-center text-xl mb-1">Bread Cheater 4.0</h1>
+    <p class="text-center text-[9px] text-[#3af0ff] mb-3">Beta 1.3</p>
+    <p class="text-center text-[9px] text-[#3af0ff] mb-5">Connected to Breadtooth 360</p>
 
+    <div class="space-y-5 overflow-y-auto no-scrollbar h-[560px] px-1">
+      <!-- Aimbot/Aimassist -->
+      <div>
+        <p class="glow-text text-xs mb-1">Aimbot/Aimassist</p>
+        <button id="aimbotBtn" class="glow-box text-[#3af0ff] text-[9px] px-2 py-0.5 rounded font-semibold hover:bg-[#3af0ff33] transition w-full max-w-[180px]">
+          Toggle Aimbot
+        </button>
+      </div>
+
+      <!-- Aggression Level -->
+      <div>
+        <p class="glow-text text-xs mb-1">Aggression Level</p>
+        <div id="aggressionBar" class="h-1 bg-[#3af0ff] rounded transition-all duration-300" style="width: 10%;"></div>
+      </div>
+
+      <!-- Ashken Mall -->
+      <div>
+        <p class="glow-text text-xs mb-1">Ashken Mall</p>
+        <button class="glow-box text-[#3af0ff] text-[9px] px-2 py-0.5 rounded font-semibold hover:bg-[#3af0ff33] transition w-full max-w-[180px]">
+          Toggle Ashken Mall Mode
+        </button>
+      </div>
+
+      <!-- Wallhacks -->
+      <div>
+        <p class="glow-text text-xs mb-1">Wallhacks</p>
+        <button class="glow-box text-[#3af0ff] text-[9px] px-2 py-0.5 rounded font-semibold hover:bg-[#3af0ff33] transition w-full max-w-[180px]">
+          Toggle Wallhacks
+        </button>
+      </div>
+
+      <!-- X-ray (Activate bread x-ray) -->
+      <div>
+        <p class="glow-text text-[8px] mb-1">X-ray (Activate bread x-ray)</p>
+        <button class="glow-box text-[#3af0ff] text-[8px] px-2 py-0.5 rounded font-semibold hover:bg-[#3af0ff33] transition w-full max-w-[180px]">
+          Toggle X-ray
+        </button>
+      </div>
+
+      <!-- Autobread (Auto throw bread) -->
+      <div>
+        <p class="glow-text text-[8px] mb-1">Autobread (Auto throw bread)</p>
+        <button class="glow-box text-[#3af0ff] text-[8px] px-2 py-0.5 rounded font-semibold hover:bg-[#3af0ff33] transition w-full max-w-[180px]">
+          Toggle Autobread
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const aimbotBtn = document.getElementById('aimbotBtn');
+    const aggressionBar = document.getElementById('aggressionBar');
+    let aimbotOn = false;
+
+    aimbotBtn.addEventListener('click', () => {
+      aimbotOn = !aimbotOn;
+      if (aimbotOn) {
+        aimbotBtn.textContent = 'Toggle Aimbot (ON)';
+        aggressionBar.style.width = '90%';
+      } else {
+        aimbotBtn.textContent = 'Toggle Aimbot';
+        aggressionBar.style.width = '10%';
+      }
+    });
+  </script>
+</body>
+</html>
